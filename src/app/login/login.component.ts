@@ -24,17 +24,16 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let hero = 'Windstorm';
   }
 
   onSubmit(loginForm: NgForm) {
-    console.log(loginForm);
-    // event.preventDefault();
-    console.log('a');
-
-    this.apiService.postLogin(loginForm).subscribe(res => {
-      console.log(res)
-      this.router.navigateByUrl('/plans');
+    this.apiService.postLogin(loginForm).subscribe(next => {
+      console.log(next)
+      // this.router.navigate(['/article/', articleId]);
+    }, error => {
+      console.log(error);
+    }, () => {
+      this.router.navigate(['/plans']);
     });
   }
 }

@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  baseUrl = 'http://demo1114440.mockable.io/login';
 
   constructor(private http: HttpClient) { }
 
   public postLogin(form:any):Observable<any> {
 
-    return this.http.post('http://demo1114440.mockable.io/login', {
+    return this.http.post(this.baseUrl, {
       login: form.login,
       password: form.password
     });
