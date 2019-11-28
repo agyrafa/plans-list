@@ -1,8 +1,28 @@
-<div class="m-2">
-  <h2>{{plan.name}} Details</h2>
-  <div><span>id: </span>{{plan.id}}</div>
-  <div><span>name: </span>{{plan.name}}</div>
-
-  {{plan}}
-
+<div class="m-2 w-50 m-auto d-flex flex-column">
+  <h3 mat-subheader>Plans</h3>
+  <mat-list class="d-flex mt-5">
+    <mat-list-item *ngFor="let plan of plans">
+      <mat-card class="d-flex flex-column mb-5">
+        <mat-chip-list class="ml-auto">
+          <mat-chip *ngIf="plan.main" color="accent" selected>Active</mat-chip>
+          <mat-chip *ngIf="!plan.main">Inactive</mat-chip>
+        </mat-chip-list>
+        <h4 mat-line>{{ plan.name }}</h4>
+        <p mat-line>{{ plan.value | currency }}</p>
+        <div class="d-flex">
+          <button
+            (click)="openDialog(plan, plans)"
+            mat-raised-button
+            color="primary"
+            class="mr-2"
+          >
+            Details
+          </button>
+          <button (click)="openDialogAlert(plan, plans)" mat-raised-button color="primary">
+            {{(!plan.main) ? 'Active' : 'Inactivate'}}
+          </button>
+        </div>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
 </div>

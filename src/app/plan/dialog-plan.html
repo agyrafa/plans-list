@@ -1,0 +1,15 @@
+<mat-card-title>{{data.item.name}}</mat-card-title>
+<mat-card-subtitle>{{data.item.value | currency}}</mat-card-subtitle>
+<div mat-dialog-content>
+  {{data.item.description}}
+</div>
+<div mat-dialog-actions class="d-flex">
+  <button
+    class="ml-auto"
+    mat-raised-button
+    color="primary"
+    (click)="activePlan(data.item, data.plans)"
+  >
+    Activate plan
+  </button>
+</div>

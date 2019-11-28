@@ -1,0 +1,12 @@
+<mat-card-title>Are you sure you want to {{(!data.item.main) ? 'active' : 'inactivate'}} this plan?</mat-card-title>
+<div mat-dialog-actions class="d-flex justify-content-between">
+  <button mat-raised-button (click)="onNoClick()">No</button>
+  <button
+    class="ml-auto"
+    mat-raised-button
+    color="primary"
+    (click)="activePlan(data.item, data.plans)"
+  >
+    Yes
+  </button>
+</div>

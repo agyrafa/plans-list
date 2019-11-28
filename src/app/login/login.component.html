@@ -1,8 +1,17 @@
 <div class="d-flex flex-column w-25 mx-auto my-5">
-  <h2 class="login mb-3">Login</h2>
-  <form (ngSubmit)="onSubmit(formData)" class="formLogin d-flex flex-column" >
-    <input type="text" [(ngModel)]="formData.login" name="login" class="form-control mb-3" placeholder="Login">
-    <input type="password" [(ngModel)]="formData.password" name="password" class="form-control mb-3" placeholder="Password">
-    <button type="submit" class="btn btn-primary ml-auto">Submit</button>
-  </form>
+  <mat-card>
+
+    <h2 class="login mb-3">Login</h2>
+    <form (ngSubmit)="onSubmit(formData)" class="formLogin d-flex flex-column" >
+      <mat-form-field>
+        <input required autocomplete="off" name="login" matInput [(ngModel)]="formData.login" placeholder="Login">
+      </mat-form-field>
+      <mat-form-field>
+        <input required type="password" autocomplete="off" name="password" matInput="password" [(ngModel)]="formData.password" placeholder="Password">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+
+  </mat-card>
+
 </div>
