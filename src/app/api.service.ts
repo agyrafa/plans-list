@@ -10,9 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  // const localUrl = 'assets/data/smartphone.json';
-
-  postLogin(form):Observable<Object> {
+  public postLogin(form:any):Observable<any> {
 
     return this.http.post('http://demo1114440.mockable.io/login', {
       login: form.login,

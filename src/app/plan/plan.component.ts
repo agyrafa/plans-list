@@ -15,6 +15,7 @@ export class PlanComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('sss');
   }
 
 }
